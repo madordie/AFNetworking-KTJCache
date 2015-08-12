@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3202F7F71B78951F007AF400"
-               BuildableName = "Demo - AFNetworking+EGOCache.app"
-               BlueprintName = "Demo - AFNetworking+EGOCache"
-               ReferencedContainer = "container:Demo - AFNetworking+EGOCache.xcodeproj">
+               BuildableName = "Demo - AFNetworking+KTJCache.app"
+               BlueprintName = "Demo - AFNetworking+KTJCache"
+               ReferencedContainer = "container:Demo - AFNetworking+KTJCache.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3202F80A1B78951F007AF400"
-               BuildableName = "Demo - AFNetworking+EGOCacheTests.xctest"
-               BlueprintName = "Demo - AFNetworking+EGOCacheTests"
-               ReferencedContainer = "container:Demo - AFNetworking+EGOCache.xcodeproj">
+               BuildableName = "Demo - AFNetworking+KTJCacheTests.xctest"
+               BlueprintName = "Demo - AFNetworking+KTJCacheTests"
+               ReferencedContainer = "container:Demo - AFNetworking+KTJCache.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3202F80A1B78951F007AF400"
-               BuildableName = "Demo - AFNetworking+EGOCacheTests.xctest"
-               BlueprintName = "Demo - AFNetworking+EGOCacheTests"
-               ReferencedContainer = "container:Demo - AFNetworking+EGOCache.xcodeproj">
+               BuildableName = "Demo - AFNetworking+KTJCacheTests.xctest"
+               BlueprintName = "Demo - AFNetworking+KTJCacheTests"
+               ReferencedContainer = "container:Demo - AFNetworking+KTJCache.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3202F7F71B78951F007AF400"
-            BuildableName = "Demo - AFNetworking+EGOCache.app"
-            BlueprintName = "Demo - AFNetworking+EGOCache"
-            ReferencedContainer = "container:Demo - AFNetworking+EGOCache.xcodeproj">
+            BuildableName = "Demo - AFNetworking+KTJCache.app"
+            BlueprintName = "Demo - AFNetworking+KTJCache"
+            ReferencedContainer = "container:Demo - AFNetworking+KTJCache.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -77,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3202F7F71B78951F007AF400"
-            BuildableName = "Demo - AFNetworking+EGOCache.app"
-            BlueprintName = "Demo - AFNetworking+EGOCache"
-            ReferencedContainer = "container:Demo - AFNetworking+EGOCache.xcodeproj">
+            BuildableName = "Demo - AFNetworking+KTJCache.app"
+            BlueprintName = "Demo - AFNetworking+KTJCache"
+            ReferencedContainer = "container:Demo - AFNetworking+KTJCache.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -96,9 +96,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3202F7F71B78951F007AF400"
-            BuildableName = "Demo - AFNetworking+EGOCache.app"
-            BlueprintName = "Demo - AFNetworking+EGOCache"
-            ReferencedContainer = "container:Demo - AFNetworking+EGOCache.xcodeproj">
+            BuildableName = "Demo - AFNetworking+KTJCache.app"
+            BlueprintName = "Demo - AFNetworking+KTJCache"
+            ReferencedContainer = "container:Demo - AFNetworking+KTJCache.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

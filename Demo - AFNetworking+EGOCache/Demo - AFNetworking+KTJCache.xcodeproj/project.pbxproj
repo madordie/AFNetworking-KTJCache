@@ -12,6 +12,7 @@
 		3202F8031B78951F007AF400 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3202F8021B78951F007AF400 /* Images.xcassets */; };
 		3202F8061B78951F007AF400 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3202F8041B78951F007AF400 /* LaunchScreen.xib */; };
 		3202F8121B78951F007AF400 /* Demo___AFNetworking_EGOCacheTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3202F8111B78951F007AF400 /* Demo___AFNetworking_EGOCacheTests.m */; };
+		3246428E1B7B5E0E0090B49A /* AFHTTPRequestOperationManager+KTJCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3246428D1B7B5E0E0090B49A /* AFHTTPRequestOperationManager+KTJCache.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,16 +26,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3202F7F81B78951F007AF400 /* Demo - AFNetworking+EGOCache.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo - AFNetworking+EGOCache.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3202F7F81B78951F007AF400 /* Demo - AFNetworking+KTJCache.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo - AFNetworking+KTJCache.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3202F7FC1B78951F007AF400 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3202F7FD1B78951F007AF400 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3202F7FF1B78951F007AF400 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3202F8001B78951F007AF400 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3202F8021B78951F007AF400 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3202F8051B78951F007AF400 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		3202F80B1B78951F007AF400 /* Demo - AFNetworking+EGOCacheTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Demo - AFNetworking+EGOCacheTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3202F80B1B78951F007AF400 /* Demo - AFNetworking+KTJCacheTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Demo - AFNetworking+KTJCacheTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3202F8101B78951F007AF400 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3202F8111B78951F007AF400 /* Demo___AFNetworking_EGOCacheTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Demo___AFNetworking_EGOCacheTests.m"; sourceTree = "<group>"; };
+		3246428C1B7B5E0E0090B49A /* AFHTTPRequestOperationManager+KTJCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHTTPRequestOperationManager+KTJCache.h"; sourceTree = "<group>"; };
+		3246428D1B7B5E0E0090B49A /* AFHTTPRequestOperationManager+KTJCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHTTPRequestOperationManager+KTJCache.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +61,7 @@
 		3202F7EF1B78951F007AF400 = {
 			isa = PBXGroup;
 			children = (
-				3202F81B1B789572007AF400 /* AFNetworking+EGOCache */,
+				3246428B1B7B5E0E0090B49A /* AFNetworking+KTJCache */,
 				3202F7FA1B78951F007AF400 /* Demo - AFNetworking+EGOCache */,
 				3202F80E1B78951F007AF400 /* Demo - AFNetworking+EGOCacheTests */,
 				3202F7F91B78951F007AF400 /* Products */,
@@ -68,8 +71,8 @@
 		3202F7F91B78951F007AF400 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3202F7F81B78951F007AF400 /* Demo - AFNetworking+EGOCache.app */,
-				3202F80B1B78951F007AF400 /* Demo - AFNetworking+EGOCacheTests.xctest */,
+				3202F7F81B78951F007AF400 /* Demo - AFNetworking+KTJCache.app */,
+				3202F80B1B78951F007AF400 /* Demo - AFNetworking+KTJCacheTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -112,19 +115,22 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		3202F81B1B789572007AF400 /* AFNetworking+EGOCache */ = {
+		3246428B1B7B5E0E0090B49A /* AFNetworking+KTJCache */ = {
 			isa = PBXGroup;
 			children = (
+				3246428C1B7B5E0E0090B49A /* AFHTTPRequestOperationManager+KTJCache.h */,
+				3246428D1B7B5E0E0090B49A /* AFHTTPRequestOperationManager+KTJCache.m */,
 			);
-			path = "AFNetworking+EGOCache";
+			name = "AFNetworking+KTJCache";
+			path = "../AFNetworking+KTJCache";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3202F7F71B78951F007AF400 /* Demo - AFNetworking+EGOCache */ = {
+		3202F7F71B78951F007AF400 /* Demo - AFNetworking+KTJCache */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3202F8151B78951F007AF400 /* Build configuration list for PBXNativeTarget "Demo - AFNetworking+EGOCache" */;
+			buildConfigurationList = 3202F8151B78951F007AF400 /* Build configuration list for PBXNativeTarget "Demo - AFNetworking+KTJCache" */;
 			buildPhases = (
 				3202F7F41B78951F007AF400 /* Sources */,
 				3202F7F51B78951F007AF400 /* Frameworks */,
@@ -134,14 +140,14 @@
 			);
 			dependencies = (
 			);
-			name = "Demo - AFNetworking+EGOCache";
+			name = "Demo - AFNetworking+KTJCache";
 			productName = "Demo - AFNetworking+EGOCache";
-			productReference = 3202F7F81B78951F007AF400 /* Demo - AFNetworking+EGOCache.app */;
+			productReference = 3202F7F81B78951F007AF400 /* Demo - AFNetworking+KTJCache.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3202F80A1B78951F007AF400 /* Demo - AFNetworking+EGOCacheTests */ = {
+		3202F80A1B78951F007AF400 /* Demo - AFNetworking+KTJCacheTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3202F8181B78951F007AF400 /* Build configuration list for PBXNativeTarget "Demo - AFNetworking+EGOCacheTests" */;
+			buildConfigurationList = 3202F8181B78951F007AF400 /* Build configuration list for PBXNativeTarget "Demo - AFNetworking+KTJCacheTests" */;
 			buildPhases = (
 				3202F8071B78951F007AF400 /* Sources */,
 				3202F8081B78951F007AF400 /* Frameworks */,
@@ -152,9 +158,9 @@
 			dependencies = (
 				3202F80D1B78951F007AF400 /* PBXTargetDependency */,
 			);
-			name = "Demo - AFNetworking+EGOCacheTests";
+			name = "Demo - AFNetworking+KTJCacheTests";
 			productName = "Demo - AFNetworking+EGOCacheTests";
-			productReference = 3202F80B1B78951F007AF400 /* Demo - AFNetworking+EGOCacheTests.xctest */;
+			productReference = 3202F80B1B78951F007AF400 /* Demo - AFNetworking+KTJCacheTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -175,7 +181,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3202F7F31B78951F007AF400 /* Build configuration list for PBXProject "Demo - AFNetworking+EGOCache" */;
+			buildConfigurationList = 3202F7F31B78951F007AF400 /* Build configuration list for PBXProject "Demo - AFNetworking+KTJCache" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -188,8 +194,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3202F7F71B78951F007AF400 /* Demo - AFNetworking+EGOCache */,
-				3202F80A1B78951F007AF400 /* Demo - AFNetworking+EGOCacheTests */,
+				3202F7F71B78951F007AF400 /* Demo - AFNetworking+KTJCache */,
+				3202F80A1B78951F007AF400 /* Demo - AFNetworking+KTJCacheTests */,
 			);
 		};
 /* End PBXProject section */
@@ -218,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3246428E1B7B5E0E0090B49A /* AFHTTPRequestOperationManager+KTJCache.m in Sources */,
 				3202F8011B78951F007AF400 /* AppDelegate.m in Sources */,
 				3202F7FE1B78951F007AF400 /* main.m in Sources */,
 			);
@@ -236,7 +243,7 @@
 /* Begin PBXTargetDependency section */
 		3202F80D1B78951F007AF400 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3202F7F71B78951F007AF400 /* Demo - AFNetworking+EGOCache */;
+			target = 3202F7F71B78951F007AF400 /* Demo - AFNetworking+KTJCache */;
 			targetProxy = 3202F80C1B78951F007AF400 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -341,7 +348,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Demo - AFNetworking+EGOCache/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Demo - AFNetworking+KTJCache";
 			};
 			name = Debug;
 		};
@@ -351,7 +358,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Demo - AFNetworking+EGOCache/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Demo - AFNetworking+KTJCache";
 			};
 			name = Release;
 		};
@@ -369,7 +376,7 @@
 				);
 				INFOPLIST_FILE = "Demo - AFNetworking+EGOCacheTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Demo - AFNetworking+KTJCacheTests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Demo - AFNetworking+EGOCache.app/Demo - AFNetworking+EGOCache";
 			};
 			name = Debug;
@@ -384,7 +391,7 @@
 				);
 				INFOPLIST_FILE = "Demo - AFNetworking+EGOCacheTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Demo - AFNetworking+KTJCacheTests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Demo - AFNetworking+EGOCache.app/Demo - AFNetworking+EGOCache";
 			};
 			name = Release;
@@ -392,7 +399,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3202F7F31B78951F007AF400 /* Build configuration list for PBXProject "Demo - AFNetworking+EGOCache" */ = {
+		3202F7F31B78951F007AF400 /* Build configuration list for PBXProject "Demo - AFNetworking+KTJCache" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3202F8131B78951F007AF400 /* Debug */,
@@ -401,21 +408,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3202F8151B78951F007AF400 /* Build configuration list for PBXNativeTarget "Demo - AFNetworking+EGOCache" */ = {
+		3202F8151B78951F007AF400 /* Build configuration list for PBXNativeTarget "Demo - AFNetworking+KTJCache" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3202F8161B78951F007AF400 /* Debug */,
 				3202F8171B78951F007AF400 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		3202F8181B78951F007AF400 /* Build configuration list for PBXNativeTarget "Demo - AFNetworking+EGOCacheTests" */ = {
+		3202F8181B78951F007AF400 /* Build configuration list for PBXNativeTarget "Demo - AFNetworking+KTJCacheTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3202F8191B78951F007AF400 /* Debug */,
 				3202F81A1B78951F007AF400 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
