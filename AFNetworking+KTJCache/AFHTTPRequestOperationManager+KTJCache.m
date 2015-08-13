@@ -71,12 +71,22 @@ NSString* KTJ_MD5(NSString *str);
     dispatch_once(&onceToken, ^{
         KTJChangeIMP(@selector(HTTPRequestOperationWithRequest:success:failure:), @selector(ktjhook_HTTPRequestOperationWithRequest:success:failure:));
         KTJChangeIMP(@selector(init), @selector(ktjhook_init));
+        KTJChangeIMP(@selector(initWithBaseURL:), @selector(ktjhook_initinitWithBaseURL:));
     });
 }
-- (void)ktjhook_init {
-    [self ktjhook_init];
+- (instancetype)ktjhook_init {
+    id _self = [self ktjhook_init];
     self.ktj_cacheData = YES;
     self.ktj_cacheAddedKey = nil;
+
+    return _self;
+}
+- (instancetype)ktjhook_initinitWithBaseURL:(NSURL *)url {
+    id _self = [self ktjhook_initinitWithBaseURL:url];
+    self.ktj_cacheData = YES;
+    self.ktj_cacheAddedKey = nil;
+    
+    return _self;
 }
 - (AFHTTPRequestOperation *)ktjhook_HTTPRequestOperationWithRequest:(NSURLRequest *)request
                                                     success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
@@ -86,7 +96,7 @@ NSString* KTJ_MD5(NSString *str);
         if (success) {
             success(operation, responseObject);
         }
-        if (!operation.ktj_isCacheData && operation.ktj_needResetCache) {
+        if (!operation.ktj_isCacheData && operation.ktj_needResetCache && operation.ktj_cacheKey) {
             [[EGOCache globalCache] setObject:responseObject forKey:operation.ktj_cacheKey];
             operation.ktj_needResetCache = NO;
         }
