@@ -5,6 +5,19 @@
     2、如果缓存GET以外的，在你请求前搞一个ktj_cacheAddedKey，千万别重复，否则会读错的。。
     3、还需要做什么？不用了啊。什么都不用了，这就OK了。
     4、注意的是，如果缓存的话你的successBlock会调用两次哟，第一次为缓存，第二次为最新数据。
+    5、例子：
+    `
+        //  GET/!GET     不使用缓存
+    self.httpManager.ktj_cacheData = NO;
+        //  GET         使用缓存
+    //    self.httpManager.ktj_cacheData = YES;
+        //  !GET        使用缓存
+    //    self.httpManager.ktj_cacheData = YES;
+    //    self.httpManager.ktj_cacheAddedKey = @"当前请求KEY，最好带上参数。。";
+    
+        //  请求放飞
+    [self.httpManager GET:URL parameters:nil success:success failure:failure];
+    `
 #使用说明：
     1、这一点很重要！！
         你要看懂这几个参数。
