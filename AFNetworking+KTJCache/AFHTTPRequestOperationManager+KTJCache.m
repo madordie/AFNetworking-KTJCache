@@ -60,10 +60,14 @@
 - (BOOL)ktj_needResetCache {
     return [objc_getAssociatedObject(self, @selector(ktj_needResetCache)) boolValue];
 }
+- (NSString *)ktj_operationCacheKey {
+    return [self.ktj_cacheKey copy];
+}
 
 @end
 
 
+#define KTJCacheKeyForEGO   @"KTJCacheKeyForEGO"
 NSString* KTJ_MD5(NSString *str);
 @implementation AFHTTPRequestOperationManager (KTJCache)
 + (void)load {
@@ -78,14 +82,14 @@ NSString* KTJ_MD5(NSString *str);
     id _self = [self ktjhook_init];
     self.ktj_cacheData = YES;
     self.ktj_cacheAddedKey = nil;
-
+    self.ktj_cacheTimeoutInterval = CGFLOAT_MAX;
     return _self;
 }
 - (instancetype)ktjhook_initinitWithBaseURL:(NSURL *)url {
     id _self = [self ktjhook_initinitWithBaseURL:url];
     self.ktj_cacheData = YES;
     self.ktj_cacheAddedKey = nil;
-    
+    self.ktj_cacheTimeoutInterval = CGFLOAT_MAX;
     return _self;
 }
 - (AFHTTPRequestOperation *)ktjhook_HTTPRequestOperationWithRequest:(NSURLRequest *)request
@@ -97,7 +101,7 @@ NSString* KTJ_MD5(NSString *str);
             success(operation, responseObject);
         }
         if (!operation.ktj_isCacheData && operation.ktj_needResetCache && operation.ktj_cacheKey) {
-            [[EGOCache globalCache] setObject:responseObject forKey:operation.ktj_cacheKey];
+            [[AFHTTPRequestOperationManager ktj_EGOCache] setObject:responseObject forKey:operation.ktj_cacheKey withTimeoutInterval:self.ktj_cacheTimeoutInterval];
             operation.ktj_needResetCache = NO;
         }
     } failure:failure];
@@ -118,7 +122,7 @@ NSString* KTJ_MD5(NSString *str);
         if (cacheKey) {
             //  这个请求进行缓存
             operation.ktj_cacheKey = cacheKey;
-            id cacheData = [[EGOCache globalCache] objectForKey:cacheKey];
+            id cacheData = [[AFHTTPRequestOperationManager ktj_EGOCache] objectForKey:cacheKey];
             if (cacheData && success) {
                 [operation ktj_saveIsCacheData:YES];
                 success(operation, cacheData);
@@ -130,8 +134,17 @@ NSString* KTJ_MD5(NSString *str);
     self.ktj_cacheData = YES;
     [operation ktj_saveIsCacheData:NO];
     operation.ktj_needResetCache = YES;
+    self.ktj_cacheTimeoutInterval = CGFLOAT_MAX;
     
     return operation;
+}
++ (EGOCache *)ktj_EGOCache {
+    static EGOCache *cache;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        cache = [[EGOCache alloc] init];
+    });
+    return cache;
 }
 - (BOOL)ktj_cacheData {
     return [objc_getAssociatedObject(self, @selector(ktj_cacheData)) boolValue];
@@ -144,6 +157,12 @@ NSString* KTJ_MD5(NSString *str);
 }
 - (void)setKtj_cacheAddedKey:(NSString *)ktj_cacheAddedKey {
     objc_setAssociatedObject(self, @selector(ktj_cacheAddedKey), ktj_cacheAddedKey, OBJC_ASSOCIATION_COPY);
+}
+- (void)setKtj_cacheTimeoutInterval:(NSTimeInterval)ktj_cacheTimeoutInterval {
+    objc_setAssociatedObject(self, @selector(ktj_cacheTimeoutInterval), @(ktj_cacheTimeoutInterval), OBJC_ASSOCIATION_RETAIN);
+}
+- (NSTimeInterval)ktj_cacheTimeoutInterval {
+    return [objc_getAssociatedObject(self, @selector(ktj_cacheTimeoutInterval)) doubleValue];
 }
 @end
 

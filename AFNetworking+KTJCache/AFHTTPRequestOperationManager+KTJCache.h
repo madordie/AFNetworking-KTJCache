@@ -7,6 +7,7 @@
 //
 
 #import "AFHTTPRequestOperationManager.h"
+#import "EGOCache.h"
 
 @interface AFHTTPRequestOperationManager (KTJCache)
 
@@ -23,6 +24,15 @@
  *          !nil  ->  正常缓存
  */
 @property (nonatomic, copy) NSString *ktj_cacheAddedKey;
+/**
+ *  缓存时长.    默认永不失效。。。当前请求有效
+ */
+@property(nonatomic) NSTimeInterval ktj_cacheTimeoutInterval;
+
+/**
+ *  当前使用的EGOCache对象
+ */
++ (EGOCache *)ktj_EGOCache;
 
 @end
 
@@ -31,6 +41,11 @@
 
 @property (nonatomic, readonly, assign) BOOL ktj_isCacheData;   //  当前数据是否是缓存数据
 @property (nonatomic, assign) BOOL ktj_needResetCache;   //  默认YES. 是否需要重设缓存.
+
+/**
+ *  当前请求的缓存KEY。 可能为空。
+ */
+- (NSString *)ktj_operationCacheKey;
 
 @end
 
