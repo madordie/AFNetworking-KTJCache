@@ -81,9 +81,9 @@
 
     
     //  GET/!GET     不使用缓存
-    self.httpManager.ktj_cacheData = NO;
+//    self.httpManager.ktj_cacheData = NO;
     //  GET         使用缓存
-//    self.httpManager.ktj_cacheData = YES;
+    self.httpManager.ktj_cacheData = YES;
     
     //  !GET        使用缓存
 //    self.httpManager.ktj_cacheData = YES;
